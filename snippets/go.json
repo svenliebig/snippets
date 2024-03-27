@@ -1,0 +1,58 @@
+{
+    "create test file": {
+        "prefix": "ctfi",
+        "body": [
+            "package ${1:package};",
+            "",
+            "import (",
+            "\t\"testing\"",
+            ")",
+            "",
+            "func Test${2:FunctionName}(t *testing.T) {",
+            "\tt.Run(\"${3:SubTestName}\", func(t *testing.T) {",
+            "\t\t${4:// test code}",
+            "\t})",
+            "}"
+        ],
+        "description": "Create a test file"
+    },
+    "create test function": {
+        "prefix": "ctf",
+        "body": [
+            "func Test${2:FunctionName}(t *testing.T) {",
+            "\tt.Run(\"${3:SubTestName}\", func(t *testing.T) {",
+            "\t\t${4:// test code}",
+            "\t})",
+            "}"
+        ],
+        "description": "Create a test function"
+    },
+    "create benchmark test file": {
+        "prefix": "cbtf",
+        "body": [
+            "package ${1:package};",
+            "",
+            "import (",
+            "\t\"testing\"",
+            ")",
+            "",
+            "func Benchmark${2:FunctionName}(b *testing.B) {",
+            "\tfor i := 0; i < b.N; i++ {",
+            "\t\t${3:// test code}",
+            "\t}",
+            "}"
+        ],
+        "description": "Create a benchmark test file"
+    },
+    "create benchmark test": {
+        "prefix": "cbt",
+        "body": [
+            "func Benchmark${2:FunctionName}(b *testing.B) {",
+            "\tfor i := 0; i < b.N; i++ {",
+            "\t\t${3:// test code}",
+            "\t}",
+            "}"
+        ],
+        "description": "Create a benchmark test"
+    }
+}
